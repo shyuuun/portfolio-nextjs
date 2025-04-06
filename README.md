@@ -1,4 +1,4 @@
-# Kokutaro's Portfolio
+# Shyuuun's Portfolio
 
 I wanted to make a retro look design on my portfolio.
 
