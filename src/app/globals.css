@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+:root {
+	--gl: radial-gradient(
+		circle 1px at 0px 0px,
+		var(--dark) 1px,
+		transparent 0
+	);
+	--gd: radial-gradient(
+		circle 1px at 0px 0px,
+		var(--light) 1px,
+		transparent 0
+	);
+	--bg-0: var(--light);
+	--bg-1: var(--gl) 0px 0px / 4px 4px, var(--light);
+	--bg-2: var(--gl) 0px 0px / 4px 4px, var(--gl) 2px 2px / 4px 4px,
+		var(--light);
+	--bg-3: var(--gl) 0px 0px / 2px 2px, var(--light);
+	--bg-4: var(--gl) 0px 0px / 2px 2px, var(--gl) 1px 1px / 2px 2px,
+		var(--light);
+	--bg-5: var(--gd) 0px 0px / 2px 2px, var(--dark);
+	--bg-6: var(--gd) 0px 0px / 4px 4px, var(--gd) 2px 2px / 4px 4px,
+		var(--dark);
+	--bg-7: var(--gd) 0px 0px / 4px 4px, var(--dark);
+	--bg-8: var(--dark);
+
+	--l-shadow: -1px -1px 0 var(--light), 0 -1px 0 var(--light),
+		1px -1px 0 var(--light), 1px 0 0 var(--light), 1px 1px 0 var(--light),
+		0 1px 0 var(--light), -1px 1px 0 var(--light), -1px 0 0 var(--light);
+
+	--d-shadow: -1px -1px 0 var(--dark), 0 -1px 0 var(--dark),
+		1px -1px 0 var(--dark), 1px 0 0 var(--dark), 1px 1px 0 var(--dark),
+		0 1px 0 var(--dark), -1px 1px 0 var(--dark), -1px 0 0 var(--dark);
+
+	--drop-shadow: drop-shadow(-1px -1px 0 var(--dark))
+		drop-shadow(0 -1px 0 var(--dark)) drop-shadow(1px -1px 0 var(--dark))
+		drop-shadow(1px 0 0 var(--dark)) drop-shadow(1px 1px 0 var(--dark))
+		drop-shadow(0 1px 0 var(--dark)) drop-shadow(-1px 1px 0 var(--dark))
+		drop-shadow(-1px 0 0 var(--dark));
+}
+
+@property --light {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: white;
+}
+
+@property --dark {
+	syntax: "<color>";
+	inherits: true;
+	initial-value: black;
+}
+
+@layer base {
+	main {
+		display: grid;
+		grid-template-areas:
+			"nav nav"
+			"about_me fillers"
+			"education education"
+			"footer footer";
+		height: 100vh;
+		grid-gap: 1rem;
+		grid-template-rows: auto 1fr 1fr auto;
+		padding: 1rem 0;
+	}
+}
+
+nav {
+	grid-area: nav;
+	background: var(--bg-3);
+	padding: 1rem;
+	border: 3px var(--dark) solid;
+	border-radius: 0.5rem;
+}
+
+.fill-content {
+	background: var(--bg-1);
+	padding: 0.5rem;
+	text-shadow: var(--l-shadow);
+	border: 1px var(--dark) solid;
+	border-radius: 0.5rem;
+}
+
+.about_me {
+	grid-area: about_me;
+	background: var(--bg-3);
+	padding: 1rem;
+	border: 3px var(--dark) solid;
+	border-radius: 0.5rem;
+}
+.fillers {
+	grid-area: fillers;
+	background: var(--bg-3);
+	padding: 1rem;
+	border: 3px var(--dark) solid;
+	border-radius: 0.5rem;
+}
+.education {
+	grid-area: education;
+	background: var(--bg-3);
+	padding: 1rem;
+	border: 3px var(--dark) solid;
+	border-radius: 0.5rem;
+}
+
+footer {
+	grid-area: footer;
+	background: var(--bg-3);
+	padding: 1rem;
+	border: 3px var(--dark) solid;
+	border-radius: 0.5rem;
+}
